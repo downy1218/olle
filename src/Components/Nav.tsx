@@ -5,7 +5,7 @@ function Nav():JSX.Element{
     const navigate = useNavigate();
     const gotoAbout = ()=>navigate('/About');
     const gotoContact = ()=>navigate('/Contact');
-
+    //서비스 버튼 누르면 모달창 나중에 만들기
     return(
         <N.NavContainer>
             <p>JEJU</p>
@@ -17,4 +17,6 @@ function Nav():JSX.Element{
         </N.NavContainer>
     )
 }
+
+
 export default Nav;

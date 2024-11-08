@@ -64,14 +64,47 @@ export const Nav = styled.nav`
 `
 export const NavContainer=styled.div`
     display:flex;
+    user-select: none;
     p{
-        color: transparent;
+        color: white;
         font-weight:bold;
         font-size:32px;
         margin-left:40px;
         pointer-events: none;
         user-select: none;
-        -webkit-text-stroke: 0.3px #ffffff; 
+  
     }
 `
+export const RouteBox = styled.div`
+    width:200px;
+    height:100px;
+    position:relative;
+    h2{
+        color: transparent;
+        -webkit-text-stroke: 0.3px #ffffff;
+        margin-top:5px;
+    }
+    h3{
+        margin-top:40px;
+        color:white;
+    }
+    p{
+        margin-top:5px;
+    }
 
+`
+
+export const ThreeWrapper = styled.div`
+    display:flex;
+    gap:70px;
+    margin-left:80px;
+    user-select: none;
+`
+export const Stick = styled.div`
+    position:absolute;
+    top:0;
+    left:210px;
+    width:1px;
+    height:320px;
+    background-color:white;
+`
