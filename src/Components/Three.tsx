@@ -2,6 +2,8 @@ import { useState } from "react";
 import * as T from '../Styles/MainStyle';
 
 function Three():JSX.Element{
+    const [hoverd,setHoverd] = useState<null|number>(null);
+
     const [info,setInfo] = useState([
         {
             id:1,
@@ -21,7 +23,7 @@ function Three():JSX.Element{
             id:3,
             route:'ROUTE 14-1',
             stamp:'탱자나무 Trifoliate Orange Tree',
-            time:'3~4 hours',
+            time:'3 ~ 4 hours',
             image:'icon3.png'
         }
     ]);
@@ -30,9 +32,13 @@ function Three():JSX.Element{
     return(
         <T.ThreeWrapper>
             {
-                info.map((a)=>(
+                info.map((a,index)=>(
                     <div key={a.id}>
-                        <T.RouteBox>
+                        {hoverd === index && <T.Card />}
+                        <T.RouteBox 
+                        onMouseEnter={()=>setHoverd(index)} 
+                        onMouseLeave={()=>setHoverd(null)}
+                        ishoverd = {hoverd === index}> 
                             <img src={`/images/${a.image}`}></img>
                             <h2>{a.route}</h2>
 
@@ -43,6 +49,7 @@ function Three():JSX.Element{
                                 <p style={{marginRight:'50px'}}>{a.time}</p>
                                 <p>▶</p>
                             </div>
+                            {/* <T.Card style={{display: hoverd === index ? 'block':'none' }}/> */}
                             <T.Stick/>
                         </T.RouteBox>
                     </div>

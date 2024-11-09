@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const Container = styled.div`
     background-image:url('/images/배경.jpg');
     width:100%;
@@ -75,30 +76,40 @@ export const NavContainer=styled.div`
   
     }
 `
-export const RouteBox = styled.div`
+type BooleanProp = {ishoverd:boolean};
+
+export const RouteBox = styled.div<BooleanProp>`
     width:200px;
     height:100px;
     position:relative;
+    z-index:5;
+    margin-left:20px;
     h2{
-        color: transparent;
-        -webkit-text-stroke: 0.3px #ffffff;
+        color: ${(props) => (props.ishoverd ? 'rgba(114, 162, 106, 1)' : 'white')};
+        // -webkit-text-stroke: 1px rgba(53, 67, 97, 1);
         margin-top:5px;
     }
     h3{
         margin-top:40px;
         color:white;
+        color: ${(props) => (props.ishoverd ? 'rgba(114, 162, 106, 1)' : 'white')};
     }
     p{
         margin-top:5px;
+        color: ${(props) => (props.ishoverd ? 'black' : 'white')};
     }
 
-`
 
+`
+//코스 카드 전체 div
 export const ThreeWrapper = styled.div`
     display:flex;
     gap:70px;
     margin-left:80px;
     user-select: none;
+    cursor:pointer;
+    z-index:5;
+    
 `
 export const Stick = styled.div`
     position:absolute;
@@ -107,4 +118,19 @@ export const Stick = styled.div`
     width:1px;
     height:320px;
     background-color:white;
+`
+
+//마우스 올리면 올라오는 흰색카드
+export const Card = styled.div`
+    z-index:1;
+    width:200px;
+    height:350px;
+    background-color:white;
+    border-radius:0px 30px 0px 0px;
+    // display:none;
+    position:absolute;
+    top:0;
+    margin-top:190px;
+    margin-right:40px;
+    // right:45;
 `
