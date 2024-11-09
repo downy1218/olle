@@ -59,6 +59,7 @@ function Three():JSX.Element{
                     </div>
                 ))
             }
+            {/*7번 14번 누르면 모달창 띄우는 기능 */}
         </T.ThreeWrapper>
     )
 }
