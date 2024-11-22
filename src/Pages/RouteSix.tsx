@@ -1,5 +1,5 @@
 import * as R from '../Styles/PageStyle';
-
+import '../Styles/PageCss.css';
 
 
 
@@ -12,7 +12,11 @@ function RouteSix(): JSX.Element {
                 <img src={'/images/forest.gif'}></img>
             </R.Container>
             <R.Core>
+                <h1>You Can Stop by</h1>
+                <span className='SlideFont'>
 
+                </span>
+                
             </R.Core>
         </R.Page>
     )
