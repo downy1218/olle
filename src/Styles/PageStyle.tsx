@@ -120,7 +120,7 @@ export const Moments = styled.div`
 export const PhotoContainer = styled.div`
     width:1000px;
     margin-top:120px;
-    margin-left:200px;
+    margin-left:220px;
     display:flex;
     flex-direction:column;
     img{
@@ -128,6 +128,7 @@ export const PhotoContainer = styled.div`
         height:300px;
         object-fit:cover;
         border-radius:10px;
-        opacity:1;
+        opacity:0;
+        transform:translateY(-50px;)
     }
 `

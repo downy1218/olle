@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 function RouteSix(): JSX.Element {
     // const navigate = useNavigate();
-    const containerRef = useRef<HTMLDivElement>(null);
+    // const containerRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<(HTMLParagraphElement|null)[]>([]); //각 텍스트 줄 배열
+    const imgRef = useRef<(HTMLImageElement|null)[]>([]); //각 이미지 배열
 
     const text: String[] = [
         "Mangjang Port 망장포구 Soesokkak쇠소깍 Gudumi구두미 Sogummak소금막 Sojeongbang Waterfall소정방폭포",
@@ -37,7 +38,27 @@ function RouteSix(): JSX.Element {
         return ()=>observer.disconnect();
     },[])
 
-
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                const target =entry.target as HTMLImageElement;
+                if(entry.isIntersecting){
+                    target.style.opacity = '1';
+                    target.style.transform = 'translateY(0)'; //(초기설정값-50px에서)원래 위치로 복귀
+                }else{
+                    target.style.opacity = '0';
+                    target.style.transform = 'translateY(50px)';
+                }
+            })
+        },{threshold:0.5});
+        imgRef.current.forEach((el)=>{
+            if(el){
+                observer.observe(el)
+                el.style.transition = 'opacity 0.5s, transform 0.5s'
+            }
+        });
+        return ()=>observer.disconnect();
+    },[])
 
     return (
         <R.Page>
@@ -92,10 +113,10 @@ function RouteSix(): JSX.Element {
             </R.Moments>
 
             <R.PhotoContainer>
-                <img src='/images/photo0.jpg'className='photo0'></img>
-                <img src='/images/photo1.jpg'className='photo1'></img>
-                <img src='/images/photo2.jpg'className='photo2'></img>
-                <img src='/images/photo4.jpg'className='photo4'></img>
+                <img src='/images/photo0.jpg'className='photo0'ref={(el)=>(imgRef.current[0] = el)}></img>
+                <img src='/images/photo1.jpg'className='photo1'ref={(el)=>(imgRef.current[1] = el)}></img>
+                <img src='/images/photo2.jpg'className='photo2'ref={(el)=>(imgRef.current[2] = el)}></img>
+                <img src='/images/photo4.jpg'className='photo3'ref={(el)=>(imgRef.current[3] = el)}></img>
             </R.PhotoContainer>
 
             <R.GotoSix className='gotosix'>
