@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Page = styled.div`
     height:1000vh;
-    background-color:rgba(203, 226, 200, 1);
+    background-color:rgba(83, 88, 76, 1);
 `
 
 
@@ -39,22 +39,68 @@ export const Container = styled.div`
 `
 
 export const ScrollTexts = styled.div`
+    position:absolute;
+    top:1300px;
     font-size:50px;
     width:700px;
     height:400px;
-    padding-top:400px;
+    padding-top:100px;
     padding-left:200px;
     line-height:80px;
     color:rgba(233, 233, 233, 0.66);
+    h2{
+        margin-bottom:0;
+    }
 `
 
 export const BasicInfo = styled.div`
+    position:relative;
     margin-top:40px;
     display:flex;
     justify-content:space-around;
     align-items:center;
     gap:20px;
     h2{
-        color:rgba(102, 102, 102, 0.81);
+        font-size:15px;
+        color:rgb(220,231,213);
+    }
+    p{
+        font-size:20px;
+        color:rgb(220,231,213);
+    }
+`
+export const StarImg = styled.div`
+    width:170px;
+    height:200px;
+    margin-left:1200px;
+    margin-top:1400px;
+    img{
+        width:50px;
+        height:50px;
+    }
+    p{
+        width:180px;
+        font-size:14px;
+        font-weight:55px;
+        color:rgb(220,141,108);
+    }
+`
+export const CallInfo = styled.div`
+    position:absolute;
+    top:1200px;
+    padding-left:200px;
+    color:rgb(220,141,108);
+`
+export const GotoSix = styled.button`
+    margin-left:200px;
+    width:200px;
+    height:50px;
+    border:solid 0.5px black;
+    border-radius:12px;
+    background-color:rgba(83, 88, 76, 1);
+    a{
+        text-decoration: none;
+        font-size:15px;
+        color:black;
     }
 `

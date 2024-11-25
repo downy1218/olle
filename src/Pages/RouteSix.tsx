@@ -2,9 +2,10 @@ import * as R from '../Styles/PageStyle';
 import '../Styles/PageCss.css';
 import { useEffect, useRef, useState } from "react"
 import { route6Info } from "../Mock/mock";
-
+import { useNavigate } from 'react-router-dom';
 
 function RouteSix(): JSX.Element {
+    const navigate = useNavigate();
     const containerRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<(HTMLParagraphElement|null)[]>([]); //각 텍스트 줄 배열
 
@@ -27,7 +28,7 @@ function RouteSix(): JSX.Element {
                     target.classList.remove('catch')
                 }
             })
-        },{ threshold: 0.8 });
+        },{ threshold: 0.5 });
         textRef.current.forEach((el)=>{
             if(el){
                 observer.observe(el) // 각 <p> 요소에 대해 observer를 설정
@@ -60,9 +61,19 @@ function RouteSix(): JSX.Element {
                     <p>{route6Info.results[0].level}</p>
                 </div>
             </R.BasicInfo>
+            
+            <R.CallInfo>
+                <p>{route6Info.results[0].centerCall}</p>
+                <p>{route6Info.results[0].openTime}</p>
+            </R.CallInfo>
 
+            <R.StarImg>
+                <img src={'/images/star.svg'} className='rotateStar'></img>
+                <p>{route6Info.results[0].wanju}</p>
+            </R.StarImg>
 
             <R.ScrollTexts>
+                <h2>you can stop by</h2>
                 {text.map((line,index)=>{
                     return(
                         <p key={index} ref={(el) => (textRef.current[index] = el)} className='textLine'>
@@ -72,6 +83,9 @@ function RouteSix(): JSX.Element {
                 })}
             </R.ScrollTexts>
 
+            <R.GotoSix className='gotosix'>
+                <a href='https://www.jejuolle.org/trail#/road/06' target='_blank'>»» 6 코스 보러가기</a>
+            </R.GotoSix>
         </R.Page>
     )
 }

@@ -9,6 +9,9 @@ interface RouteInfo{
     totalKM:number;
     totalTime:string;
     level:string;
+    wanju:string;
+    centerCall:string;
+    openTime:string;
 }
 interface Route6Info{
     results:RouteInfo[];
@@ -41,6 +44,9 @@ export const route6Info : Route6Info = {
             "totalKM":10.1,
             "totalTime":"3 ~ 4 시간",
             "level":"초보",
+            "wanju":"모든 코스의 시작, 중간, 종점 스태프를 찍은 후 사단법인 제주올레 사무국이 있는 제주올레 여행자센터에 방문하면 완주 인증 확인을 받을 수 있습니다",
+            "centerCall":"여행자센터 : 서귀포시 중정로 22 064-762-2167",
+            "openTime":"🕑연중무휴, 운영시간 08:00 ~ 22:00"
 
         }
     ]
