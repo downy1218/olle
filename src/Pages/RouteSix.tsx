@@ -116,7 +116,7 @@ function RouteSix(): JSX.Element {
                 <img src='/images/photo0.jpg'className='photo0'ref={(el)=>(imgRef.current[0] = el)}></img>
                 <img src='/images/photo1.jpg'className='photo1'ref={(el)=>(imgRef.current[1] = el)}></img>
                 <img src='/images/photo2.jpg'className='photo2'ref={(el)=>(imgRef.current[2] = el)}></img>
-                <img src='/images/photo4.jpg'className='photo3'ref={(el)=>(imgRef.current[3] = el)}></img>
+                <img src='/images/photo3.jpg'className='photo3'ref={(el)=>(imgRef.current[3] = el)}></img>
             </R.PhotoContainer>
 
             <R.GotoSix className='gotosix'>
