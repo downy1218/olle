@@ -1,4 +1,20 @@
-export const route6Info = {
+interface Stop {
+    id:number;
+    name:string;
+    info:string;
+}
+interface RouteInfo{
+    id:number;
+    stop:Stop[];
+    totalKM:number;
+    totalTime:string;
+    level:string;
+}
+interface Route6Info{
+    results:RouteInfo[];
+}
+
+export const route6Info : Route6Info = {
     "results":[
         {
             "id":6,

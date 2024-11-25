@@ -1,0 +1,8 @@
+.textLine {
+    font-size: 24px;
+    color: gray;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    transition: background 1s ease;
+}

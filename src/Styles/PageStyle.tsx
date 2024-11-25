@@ -1,3 +1,4 @@
+import exp from 'constants';
 import styled from 'styled-components';
 
 export const Page = styled.div`
@@ -37,6 +38,23 @@ export const Container = styled.div`
     }
 `
 
-export const Core = styled.div`
-    
+export const ScrollTexts = styled.div`
+    font-size:50px;
+    width:700px;
+    height:400px;
+    padding-top:400px;
+    padding-left:200px;
+    line-height:80px;
+    color:rgba(233, 233, 233, 0.66);
+`
+
+export const BasicInfo = styled.div`
+    margin-top:40px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:20px;
+    h2{
+        color:rgba(102, 102, 102, 0.81);
+    }
 `
