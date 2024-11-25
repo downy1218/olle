@@ -2,8 +2,9 @@ import exp from 'constants';
 import styled from 'styled-components';
 
 export const Page = styled.div`
-    height:1000vh;
+    height:700vh;
     background-color:rgba(83, 88, 76, 1);
+    user-select:none;
 `
 
 
@@ -102,5 +103,31 @@ export const GotoSix = styled.button`
         text-decoration: none;
         font-size:15px;
         color:black;
+    }
+`
+export const Moments = styled.div`
+    width:100%;
+    margin-top:200px;
+    display:flex;
+    justify-content:center;
+    user-select:none;
+    position:relative;
+    p{
+        font-size:80px;
+        color:rgb(231,199,148);
+    }
+`
+export const PhotoContainer = styled.div`
+    width:1000px;
+    margin-top:120px;
+    margin-left:200px;
+    display:flex;
+    flex-direction:column;
+    img{
+        width:200px;
+        height:300px;
+        object-fit:cover;
+        border-radius:10px;
+        opacity:1;
     }
 `

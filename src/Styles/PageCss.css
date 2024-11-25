@@ -22,6 +22,10 @@
     position: relative;
     font-weight: bold;
 }
+.gotosix p{
+    z-index: 5;
+    position: relative;
+}
 .gotosix::before{
     z-index: 0;
     content: ''; /*가상요소 생성*/
@@ -39,8 +43,15 @@
     left:0; /*gotosix요소를 hover시 before요소를 left:0으로 변경*/
 }
 
-
-
+.photo1{
+    margin-left: 260px;
+}
+.photo2{
+    margin-left: 520px;
+}
+.photo4{
+    margin-left:780px;
+}
 
 
 

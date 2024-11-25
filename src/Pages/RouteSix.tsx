@@ -5,7 +5,7 @@ import { route6Info } from "../Mock/mock";
 import { useNavigate } from 'react-router-dom';
 
 function RouteSix(): JSX.Element {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const containerRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<(HTMLParagraphElement|null)[]>([]); //각 텍스트 줄 배열
 
@@ -61,7 +61,7 @@ function RouteSix(): JSX.Element {
                     <p>{route6Info.results[0].level}</p>
                 </div>
             </R.BasicInfo>
-            
+
             <R.CallInfo>
                 <p>{route6Info.results[0].centerCall}</p>
                 <p>{route6Info.results[0].openTime}</p>
@@ -85,6 +85,21 @@ function RouteSix(): JSX.Element {
 
             <R.GotoSix className='gotosix'>
                 <a href='https://www.jejuolle.org/trail#/road/06' target='_blank'>»» 6 코스 보러가기</a>
+            </R.GotoSix>
+
+            <R.Moments>
+                <p>The Moments You'll Meet"</p>
+            </R.Moments>
+
+            <R.PhotoContainer>
+                <img src='/images/photo0.jpg'className='photo0'></img>
+                <img src='/images/photo1.jpg'className='photo1'></img>
+                <img src='/images/photo2.jpg'className='photo2'></img>
+                <img src='/images/photo4.jpg'className='photo4'></img>
+            </R.PhotoContainer>
+
+            <R.GotoSix className='gotosix'>
+                <p>첫 페이지로 돌아가기</p>
             </R.GotoSix>
         </R.Page>
     )
